@@ -60,13 +60,14 @@ func sum(first_num_str string, second_num_str string) string {
 				overflow = true
 			}
 		}
-		fmt.Println("Kết quả hàng thứ", i+1, "là:", digit)
+		// fmt.Println("Kết quả hàng thứ", i+1, "là:", digit)
 
 		// massive code smells pt.2: the overflowing of the digits
 		if overflow {
+			// Appending to the left side of the string
 			result_string = fmt.Sprint(digit) + result_string
 			result_string = fmt.Sprint(1) + result_string
-			fmt.Println("Kết quả hàng thứ", i+2, "là:", 1)
+			// fmt.Println("Kết quả hàng thứ", i+2, "là:", 1)
 		} else {
 			result_string = fmt.Sprint(digit) + result_string
 		}
@@ -74,7 +75,6 @@ func sum(first_num_str string, second_num_str string) string {
 	}
 	return result_string
 }
-
 func main() {
 	first_num := "192780"
 	second_num := "33221"
